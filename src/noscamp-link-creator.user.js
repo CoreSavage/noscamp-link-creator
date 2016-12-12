@@ -1,14 +1,14 @@
 // ==UserScript==
-// @name         PTH pthcamp Link Creator
-// @namespace    http://savagecore.eu/
+// @name         NoStream noscamp Link Creator
+// @namespace    http://nostre.am
 // @version      0.1.3
-// @description  Generate pthcamp command and copy to clipboard
-// @author       SavageCore
+// @description  Generate noscamp command and copy to clipboard
+// @author       CoreSavage
 
 // @include    https://bandcamp.com/download?from=collection*
 // @include    http*://bandcamp.com/download?id*
 
-// @downloadURL	 https://github.com/SavageCore/pthcamp-link-creator/raw/master/src/pthcamp-link-creator.user.js
+// @downloadURL	 https://github.com/CoreSavage/noscamp-link-creator/raw/master/src/noscamp-link-creator.user.js
 // @grant        GM_setClipboard
 
 // ==/UserScript==
@@ -24,7 +24,7 @@
 	var artist = pageData.digital_items[0].artist;
 	var title = pageData.digital_items[0].title;
 	var year = releaseDate.getFullYear();
-	var command = 'pthcamp "' + artist + '" "' + title + '" ' + year + ' ';
+	var command = 'noscamp "' + artist + '" "' + title + '" ' + year + ' ';
 	var linkElement;
 
 	new MutationObserver(function (mutations) { // eslint-disable-line no-undef
@@ -50,7 +50,7 @@
 
 	var target = document.getElementsByClassName('download')[0];
 
-	target.insertAdjacentHTML('afterend', '<p id="scCopyToClipboard">Copy pthcamp command</p>');
+	target.insertAdjacentHTML('afterend', '<p id="scCopyToClipboard">Copy noscamp command</p>');
 
 	linkElement = document.getElementById('scCopyToClipboard');
 	linkElement.setAttribute('style', 'display: none;');
